@@ -23,7 +23,7 @@ db.connect(function (err) {
 const app = express();
 //crea tabella ordine
 app.get("/createordertable", (req, res) => {
-  let sql = "CREATE TABLE CIAONE (" + columns + ")";
+  let sql = "CREATE TABLE ordine (" + columns + ")";
   let query = db.query(sql, columns, (err, result) => {
     if (err) throw err;
     console.log(result);

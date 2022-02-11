@@ -1,7 +1,6 @@
 const fs = require("fs");
 
-var results = require("../details.json");
-
+var results = require("./allacci.json");
 if (results.length > 0) {
   var i = 1;
   var columnsIns = results[i];
@@ -14,7 +13,6 @@ if (results.length > 0) {
 } else {
   console.log("No insercolumns");
 }
-
 //colonna per create table
 let colonnaInsert = insertcolumns.join();
 let columnsinsert = colonnaInsert.replaceAll(" ", "_");

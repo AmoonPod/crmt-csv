@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-var results = require("../details.json");
+var results = require("./contratti.json");
 
 if (results.length > 0) {
   var i = 1;
@@ -8,7 +8,8 @@ if (results.length > 0) {
   var createcolumns = [];
 
   for (var key in columnsCr) {
-    createcolumns.push(key);
+    let chiave = key.replaceAll(" ", "_");
+    createcolumns.push(chiave + " TEXT");
   }
   //console.log(createcolumns);
 } else {
@@ -17,6 +18,5 @@ if (results.length > 0) {
 
 //colonna per create table
 let colonnaCreate = createcolumns.join();
-let text = colonnaCreate.replaceAll(" ", "_");
-let columncreate = text.replaceAll(",", " TEXT,");
+let columncreate = colonnaCreate;
 exports.columncreate = columncreate;
